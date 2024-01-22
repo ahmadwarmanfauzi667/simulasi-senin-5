@@ -1,0 +1,110 @@
+<!-- zacki xii rpl 3 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="shortcut icon" href="./assets/img/store.png" type="image/x-icon" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+  <link rel="stylesheet" href="./styles/main.css" />
+  <link rel="stylesheet" href="./styles/menu.css" />
+  <title>Simulasi UKK | Za</title>
+</head>
+
+<body>
+  <div class="container">
+    <header class="navbar">
+      <img src="./assets/img/store.png" alt="resto-kami" />
+      <h3>Menu</h3>
+    </header>
+    <main class="main-menu">
+      <section class="menu-section">
+        <!-- card -->
+        <div class="card">
+          <div class="kategori" aria-readonly="true">Paket</div>
+          <hr class="line" />
+          <div class="container-content">
+            <div>
+              <img src="./images/example-product/indomie.jpg" alt="" class="produk-img" />
+            </div>
+            <div class="content">
+              <p id="Paket">Paket Hemat 1</p>
+              <p>
+                Nasi Timbel + Ayam (bakar/goreng) + Tahu & Tempe + Sambal +
+                Teh
+              </p>
+              <p id="harga">Rp. 36.000</p>
+              <div class="content2">
+                <input type="number" hidden id="nojumlah" value="0" />
+                <button class="tambah" id="tambah">+</button>
+                <p id="jumlah">Jumlah: 0</p>
+                <button class="kurang" id="kurang">-</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="kategori" aria-readonly="true">Paket</div>
+          <hr class="line" />
+          <div class="container-content">
+            <div>
+              <img src="./images/example-product/indomie.jpg" alt="" class="produk-img" />
+            </div>
+            <div class="content">
+              <p>Paket Hemat 1</p>
+              <p>
+                Nasi Timbel + Ayam (bakar/goreng) + Tahu & Tempe + Sambal +
+                Teh
+              </p>
+              <p id="harga">Rp. 36.000</p>
+              <div class="content2">
+                <input type="number" hidden id="nojumlah" value="0" />
+                <button class="tambah" id="tambah">+</button>
+                <p id="jumlah">Jumlah: 0</p>
+                <button class="kurang" id="kurang">-</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+    </main>
+    <div class="container-bayar">
+      <div style="width: 90%; margin: auto">
+        <button onclick="pesan()" class="button-full">Pesan</button>
+      </div>
+    </div>
+
+    <script>
+      const jumlah = document.getElementById("jumlah");
+      const tambah = document.getElementById("tambah");
+      const kurang = document.getElementById("kurang");
+      let valueJumlah = document.getElementById("nojumlah").value;
+      let total = ""
+
+      tambah.addEventListener("click", () => {
+        valueJumlah = eval(valueJumlah + 1);
+        jumlah.innerHTML = `jumlah: ${valueJumlah}`;
+        total = valueJumlah * 36000
+        console.log(total)
+      });
+
+      kurang.addEventListener("click", () => {
+        if (valueJumlah > 0) {
+          valueJumlah = valueJumlah - 1;
+          jumlah.innerHTML = `jumlah: ${valueJumlah}`;
+        }
+      });
+      const pesan = () => {
+        if (total == 0) {
+          alert('pesanan anda kosong')
+        } else {
+          localStorage.setItem("total", total);
+          window.location.href = "order.html"
+        }
+      }
+    </script>
+  </div>
+</body>
+
+</html>

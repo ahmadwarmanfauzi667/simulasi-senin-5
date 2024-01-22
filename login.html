@@ -1,0 +1,63 @@
+<!-- zacki xii rpl 3 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="shortcut icon" href="./assets/img/store.png" type="image/x-icon" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+  <link rel="stylesheet" href="./styles/main.css" />
+  <link rel="stylesheet" href="./styles/login.css" />
+  <title>Simulasi UKK</title>
+</head>
+
+<body>
+  <div class="container">
+    <main>
+      <header>
+        <img src="assets/img/store.png" alt="resto-kami" />
+        <h1 style="user-select: none">SELAMAT DATANG DI RESTORAN KAMI</h1>
+      </header>
+      <section class="login-section">
+        <form id="loginForm" class="loginForm">
+          <label for="username">Nama pelangkogan</label>
+          <input type="text" id="username" name="username" />
+          <!-- required -->
+          <label for="password">Nomor Telepon</label>
+          <input type="password" id="password" name="password" />
+          <!-- required -->
+          <!-- submit -->
+          <button type="button" onclick="login()" class="button-full">Lihat Menu</button>
+        </form>
+      </section>
+    </main>
+    <footer>
+      <p>
+        &copy; 2023 Restoran Kami. <br />
+        All rights reserved.
+      </p>
+    </footer>
+  </div>
+  <script>
+    const akun = {
+      username: "username",
+      password: "password"
+    }
+    const inputUsername = document.getElementById('username')
+    const inputPassword = document.getElementById('password')
+
+    const login = () => {
+        if (akun.username != inputUsername.value) {
+          alert('username salah')
+        } else {
+          if (akun.password != inputPassword.value) {
+            alert('password salah')
+          } else {
+            window.location.href = "menu.html"
+          }
+        }
+      }
+  </script>
+</body>
+
+</html>

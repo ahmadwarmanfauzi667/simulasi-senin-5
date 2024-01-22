@@ -1,0 +1,56 @@
+@font-face {
+  font-family: "Quicksand";
+  src: url("../assets/font/Quicksand-VariableFont_wght.ttf") format("truetype");
+}
+
+body {
+  font-family: "Quicksand";
+}
+
+header {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 3rem auto;
+}
+
+header img {
+  width: 100px;
+  user-select: none;
+}
+
+main {
+  min-height: 100vh;
+  width: 360px;
+  /* background-color: blue; */
+  /* login3 */
+}
+
+.loginForm {
+  /* background-color: red; */
+  width: 90%;
+  margin: auto;
+}
+
+header h1 {
+  font-family: Quicksand;
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.loginForm input {
+  width: 97%;
+  margin: 10px auto;
+  padding: 10px 0px 10px 10px;
+  border: none;
+  border-radius: 5px;
+  /* background-color: rgb(255, 228, 228); */
+  background-color: rgb(254, 238, 238);
+}
+
+.loginForm input:focus {
+  outline: 2px solid red;
+  box-shadow: 0 0 5px red;
+}
