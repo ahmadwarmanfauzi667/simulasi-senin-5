@@ -43,10 +43,27 @@
       username: "username",
       password: "password"
     }
-    const = document.getElementById('')
-    const = document.getElementById('')
+    const inputUsername = document.getElementById('username')
+    const inputPassword = document.getElementById('password')
 
-    const login = () => {}
+    const login = () => {
+
+      if (inputUsername.value.length > 0 && inputPassword.value.length > 0 ) {
+
+        if( inputUsername.value == akun.username && inputPassword.value == akun.password) {
+          window.location.href = "menu.html"
+        }else {
+          alert("username dan password salah")
+        }
+
+        
+      }else{
+        alert("masukan username dan password telebih dahulu")
+      }
+
+    }
+
+    
   </script>
 </body>
 

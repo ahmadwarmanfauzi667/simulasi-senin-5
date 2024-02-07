@@ -20,7 +20,7 @@
     <!-- onsubmit="bayar()" -->
     <main class="payment-main">
       <section class="payment-section">
-        <p>tampilkan total pembayaran dan saldo sisa, jika sudah hapus tulisan ini!</p>
+        <!-- <p>tampilkan total pembayaran dan saldo sisa, jika sudah hapus tulisan ini!</p> -->
         <div class="order-pembayaran">
           <h4>Total Pembayaran Sebesar</h4>
           <h3 id="uang"></h3>
@@ -57,11 +57,11 @@
         })
       }
 //ambil total dan saldo
-      const  = localStorage.("total")
-      const  = localStorage.("saldo")
+      const total = localStorage.getItem("total")
+      const  saldo = localStorage.getItem("saldo")
       //ambil id yang tersedia dan ubah elementnya
-      document.getElementById(''). = formatUang(parseInt())
-      document.getElementById(''). = formatUang(parseInt())
+      document.getElementById('uang').innerHTML = formatUang(parseInt(total))
+      document.getElementById('Saldo').innerHTML = formatUang(parseInt(saldo))
     </script>
 </body>
 

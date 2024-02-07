@@ -6,52 +6,58 @@ const formatUang = (rupiah) => {
   });
 };
 //ambil item nama
-let  = localStorage.("");
+let nama = localStorage.getItem("nama");
 //ambil item desc
-let  = localStorage.(")
+let desc = localStorage.getItem("desc");
 //perintahkan document untuk mengambil id info dan isi variabel untuk menampilkan nama dan desc!
-info = `anda telah memesan ${}: ${}`;
+document.getElementById(
+  "info"
+).innerHTML = `anda telah memesan ${nama}: ${desc}`;
 //ambil item total
-let  = localStorage.("");
+let total = localStorage.getItem("total");
 //ubah element yang id nya total!
 //isi parseInt()!
-let  = (document.getElementById("total") = formatUang(
-  parseInt()
-  ));
-  let  = 50000;
+document.getElementById("total").innerHTML = formatUang(parseInt(total));
+let saldo = 50000;
 //ubah element yang id nya saldo!
-document.getElementById("saldo) = formatUang();
+let elementSaldo = document.getElementById("saldo");
+
+elementSaldo.innerHTML = formatUang(saldo);
 const bayar = () => {
   //mengambil resto-pay dan cash yang berbentuk input type radio, lalu ambil valuenya(true/false)
-  let  = document.getElementById("resto-pay");
-  let  = document.getElementById("cash");
+  let resto = document.getElementById("resto-pay").checked;
+  let cash = document.getElementById("cash").checked;
   // Cek memilih metode
-  if (!  !) {
-  
+  if (!resto && !cash) {
   } else {
     //check jika resto pay di pilih
-    if () {
+    if (resto === true) {
       //check jika saldo nya kurang!
-      if () {
+      if (saldo < total) {
         //jika saldonya kurang maka akan terdapat pilihan apakah ingin topup atau engga
-         = ("Saldo Tidak Cukup ! apakah anda ingin topup?");
+        const konfirmasi = confirm(
+          "Saldo Tidak Cukup ! apakah anda ingin topup?"
+        );
         //jika pilihan tersebut di klik oke atau setuju untuk topup maka
-        if () {
+        if (konfirmasi) {
           //akan muncul isian atau formulir untuk topup!
-           = ("masukan nominal pecahan 10000");
+          const topUp = prompt("masukan nominal pecahan 10000");
           //jika angka didalam var topup tersebut kelipatan sepuluh ribu maka
-          if () {
-           //saldo akan di tambahkan dengan topup!
-           //topup di konversi menjadi angka
+          if (topUp % 10000 == 0) {
+            //saldo akan di tambahkan dengan topup!
+            //topup di konversi menjadi angka
+            saldo += Number(topUp);
+            elementSaldo.innerHTML = formatUang(saldo);
+          } else {
+            alert("masukan nominal pecahan 10000");
           }
         }
+      }else{
+        localStorage.setItem("saldo", saldo - Number(total))
+        window.location.href = "succes.html";
       }
-       
-      }
+    } else {
+      window.location.href = "cashier.html";
     }
   }
-} else if (cash != true) {
 };
-cashier.html";
-//else pertama masuk ke sukses.html dan else kedua masuk ke cashier
-cari penempatan else nya!
